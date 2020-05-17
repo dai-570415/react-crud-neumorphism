@@ -1,0 +1,216 @@
+@charset "utf-8";
+/* ログインフォーム */
+button,
+input {
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    border-radius: 320px;
+    background: #EBECF0;
+}
+label {
+    display: block;
+    margin-bottom: 25px;
+    width: 100%;
+}
+input {
+    width: 100%;
+    color:#51AEFD;
+    box-shadow: 2px 2px 5px #BABECC inset, -5px -5px 10px #FFF inset;
+    margin: 0 10px 15px 0;
+    padding: 15px;
+    transition: .5s;
+}
+::placeholder {
+    color:rgb(202, 202, 202);
+}
+input:focus {
+    box-shadow: 1px 1px 2px #BABECC inset, -1px -1px 2px #FFF inset;
+}
+button {
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 10px 30px;
+    background:linear-gradient(#1554FF, #51AEFD);
+}
+button:last-child {
+    margin: 0;
+}
+button:hover {
+    color: rgb(167, 167, 167);
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    background: #EBECF0;
+}
+button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+.post-button {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+.post-button:hover {
+    background: none;
+    box-shadow: none;
+}
+.invalid-feedback {
+    font-size: 14px;
+    font-weight: bold;
+    color: crimson;
+}
+.error {
+    font-size: 14px;
+    font-weight: bold;
+    color: crimson;
+}
+
+/* user */
+.user-list {
+    background: #EBECF0;
+    box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
+}
+.user-list:hover {
+    background: #EBECF0;
+    box-shadow: 2px 2px 5px #BABECC inset, -5px -5px 10px #FFF inset;
+}
+.user-list .inner-user-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+    padding: 15px 20px;
+}
+.user-list .inner-user-list .detail-button {
+    color: #fff;
+}
+.user-list .inner-user-list .user-text {
+    line-height: 18px;
+    color: #0062FF;
+}
+.user-list .inner-user-list .user-text .user-name {
+    font-size: 18px;
+}
+.user-list .inner-user-list .user-text .user-email {
+    font-size: 12px;
+}
+
+/* post */
+.post-form {
+    margin: 0 0 50px 0;
+}
+
+/* コメント吹き出し分岐 */
+.post-list .inner-post-list {
+    display: flex;
+    align-items: flex-start;
+}
+.post-list .auth-inner-post-list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+.post-list .inner-post-list .user-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: 0 15px 0 0;
+    border-radius: 50%;
+    background: #fff;
+}
+.post-list .auth-inner-post-list .auth-user-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: 0 0 0 15px;
+    border-radius: 50%;
+    background: #fff;
+}
+.post-list .inner-post-list .inner-post-text {
+    width: 100%;
+    margin: 0 0 25px 0;
+    padding: 15px 15px 10px 15px;
+    border-radius: 0 20px 20px 20px;
+    background: #EBECF0;
+    box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
+}
+.post-list .auth-inner-post-list .auth-inner-post-text {
+    width: 100%;
+    margin: 0 0 25px 0;
+    padding: 15px 15px 10px 15px;
+    border-radius: 20px 0 20px 20px;
+    background: #EBECF0;
+    box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
+}
+/* コメント吹き出し分岐終了 */
+
+.post-msg {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.75em;
+    margin: 0 0 15px 0;
+}
+.post-name {
+    text-align: left;
+    font-size: 12px;
+    color: #1554FF;
+    margin: 0;
+    bottom: 4px;
+    position: relative;
+}
+.delete img {
+    width: 20px;
+    margin: 0 5px 0 0;
+}
+.delete {
+    font-size: 14px;
+    color: #b8b8b8;
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 100%;
+    }
+    .user-list .inner-user-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .user-list .inner-user-list .user-text {
+        line-height: 1.5em;
+    }
+    .post-form {
+        left: 0;
+        right: 0;
+        bottom: 70px;
+        position: fixed;
+        margin: 0;
+        background: #EBECF0;
+        z-index: 100;
+    }
+    .post-input {
+        border-bottom: 1px solid #BABECC;
+        border-radius: 0;
+        box-shadow: -2px -2px 5px #BABECC;
+    }
+    .post-button {
+        width: 50px;
+        margin: 0 0 0 10px;
+    }
+    .post-list {
+        display: block;
+    }
+    .post-list .inner-post-list {
+        width: 100%;
+    }
+    .error {
+        margin: 0 0 0 25px;
+    }
+}
