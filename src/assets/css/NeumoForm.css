@@ -71,7 +71,7 @@ button:active {
     color: crimson;
 }
 
-/* user */
+/* user-list */
 .user-list {
     background: #EBECF0;
     box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
@@ -99,6 +99,46 @@ button:active {
 }
 .user-list .inner-user-list .user-text .user-email {
     font-size: 12px;
+}
+
+/* user */
+.user-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 25px 0 0 0;
+}
+.user {
+    text-align: center;
+    flex: 1;
+    margin: 0 0 0 20px;
+}
+.user .auth-user-icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #fff;
+}
+.user .user-datail .user-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25em;
+    color: #0062FF;
+    margin: 10px 0 0 0;
+}
+.user-post-list {
+   flex: 3;
+}
+.no-user-posts {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4b4b4b;
+    padding: 50px 50px 45px;
+    border: 1px dashed #888888;
 }
 
 /* post */
@@ -136,7 +176,7 @@ button:active {
     width: 100%;
     margin: 0 0 25px 0;
     padding: 15px 15px 10px 15px;
-    border-radius: 0 20px 20px 20px;
+    border-radius: 0 25px 25px 25px;
     background: #EBECF0;
     box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
 }
@@ -144,7 +184,7 @@ button:active {
     width: 100%;
     margin: 0 0 25px 0;
     padding: 15px 15px 10px 15px;
-    border-radius: 20px 0 20px 20px;
+    border-radius: 25px 0 25px 25px;
     background: #EBECF0;
     box-shadow: 2px 2px 5px #BABECC, -5px -5px 10px #FFF;
 }
@@ -186,6 +226,29 @@ button:active {
     .user-list .inner-user-list .user-text {
         line-height: 1.5em;
     }
+    .user-wrapper {
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 25px 0 0 0;
+    }
+    .user {
+        text-align: center;
+        margin: 0 0 20px 0;
+        bottom: 35px;
+        position: relative;
+    }
+    .user .auth-user-icon {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        object-fit: cover;
+        border-radius: 50%;
+        background: #fff;
+    }
+    .user-post-list {
+       flex: 3;
+    }
     .post-form {
         left: 0;
         right: 0;
@@ -196,9 +259,9 @@ button:active {
         z-index: 100;
     }
     .post-input {
-        border-bottom: 1px solid #BABECC;
+        border-bottom: 1px solid #fff;
         border-radius: 0;
-        box-shadow: -2px -2px 5px #BABECC;
+        box-shadow: -2px -2px 5px #fff;
     }
     .post-button {
         width: 50px;

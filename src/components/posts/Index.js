@@ -84,9 +84,9 @@ const Index = () => {
                 </button>
 
                 {name ? (
-                    <span className="post-name">{ name }</span>
+                    <Link to="/user" className="post-name">{ name }</Link>
                 ) : (
-                    <span className="post-name">Firebaseユーザー</span>
+                    <Link to="/user" className="post-name">Firebaseユーザー</Link>
                 )}
                 
                 { pending && 'Pendeing...' }
