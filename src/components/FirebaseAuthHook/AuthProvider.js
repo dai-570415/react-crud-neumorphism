@@ -24,6 +24,14 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+    const signout = () => {
+        try {
+            firebase.auth().signOut();
+        } catch (error) {
+            alert(error);
+        }
+    }
+
     useEffect(() => {
         firebase.auth().onAuthStateChanged(setCurrentUser);
     }, []);
@@ -33,6 +41,7 @@ export const AuthProvider = ({ children }) => {
             value={{
                 signin: signin,
                 signup: signup,
+                signout: signout,
                 currentUser
             }}
         >

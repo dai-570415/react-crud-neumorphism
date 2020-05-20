@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { withRouter } from 'react-router';
 import firebase from '../../Firebase'
 import SignOutIcon from '../../assets/img/signout.png';
+import { AuthContext } from './AuthProvider';
 import styled from 'styled-components';
 
 const SignOutStyle = styled.img`
@@ -14,11 +16,19 @@ const SignOutStyle = styled.img`
 const SignOut = () => {
 
     const user = firebase.auth().currentUser;
-    
+
+    const { signout } = useContext(AuthContext);
+    const onSignOut = () => {
+        signout();
+    }
+
     return(
         <React.Fragment>
             {user != null &&
-                <div className="sign-out" onClick={() => firebase.auth().signOut()}>
+                <div
+                    className="sign-out"
+                    onClick={ onSignOut }
+                >
                     <SignOutStyle
                         src={ SignOutIcon }
                         alt="Sign out"
@@ -29,4 +39,4 @@ const SignOut = () => {
     );
 }
 
-export default SignOut;
+export default withRouter(SignOut);

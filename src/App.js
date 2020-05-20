@@ -1,7 +1,7 @@
 import React from 'react';
 import './assets/css/App.css';
 import './assets/css/NeumoForm.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 // components
 import Index from './components/Index';
 // components/posts
