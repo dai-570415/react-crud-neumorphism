@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import HomeIcon from '../../assets/img/nav-earth.png';
-import RegisterIcon from '../../assets/img/nav-register.png';
+import UserIcon from '../../assets/img/nav-user.png';
 
 const Nav = () => {
     return(
@@ -30,11 +30,11 @@ const Nav = () => {
                 </Link> */}
 
                 {/* Auth パターン2 */}
-                <Link to="/signup_hook" className="link">
-                    <img className="pc-icon" src={ RegisterIcon } alt="Signup"/>
-                    <img className="sp-icon" src={ RegisterIcon } alt="Signup"/>
-                    <span className="pc-icon-text">Sign up</span>
-                    <span className="sp-icon-text">Sign up</span>
+                <Link to="/user" className="link">
+                    <img className="pc-icon" src={ UserIcon } alt="User"/>
+                    <img className="sp-icon" src={ UserIcon } alt="User"/>
+                    <span className="pc-icon-text">User</span>
+                    <span className="sp-icon-text">User</span>
                 </Link>
             </nav>
         </React.Fragment>

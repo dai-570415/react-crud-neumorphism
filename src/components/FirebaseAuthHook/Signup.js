@@ -14,22 +14,24 @@ const Signup = ({ history }) => {
 
     return (
         <React.Fragment>
-            <h2>Sign up</h2>
-            <form onSubmit={ handleSubmit }>
-                <input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                />
-                <button type="submit">Sign up</button>
-            </form>
-            <div className="link">
-                <Link to="/">アカウントお持ちの方はこちら</Link>
+            <div className="sign-page">
+                <h2>Sign up</h2>
+                <form onSubmit={ handleSubmit }>
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                    />
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                    />
+                    <button type="submit">Sign up</button>
+                </form>
+                <div className="link">
+                    <Link to="/">アカウントお持ちの方はこちら</Link>
+                </div>
             </div>
         </React.Fragment>
     );

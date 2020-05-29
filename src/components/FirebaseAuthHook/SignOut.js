@@ -14,12 +14,12 @@ const SignOutStyle = styled.img`
 `;
 
 const SignOut = () => {
-
     const user = firebase.auth().currentUser;
 
     const { signout } = useContext(AuthContext);
     const onSignOut = () => {
         signout();
+        window.history.pushState(null, null, '/')
     }
 
     return(

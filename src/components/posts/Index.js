@@ -84,9 +84,9 @@ const Index = () => {
                 </button>
 
                 {name ? (
-                    <Link to="/user" className="post-name">{ name }</Link>
+                    <Link to="/user" className="user-name">{ name }</Link>
                 ) : (
-                    <Link to="/user" className="post-name">Firebaseユーザー</Link>
+                    <Link to="/user" className="user-name">Firebaseユーザー</Link>
                 )}
                 
                 { pending && 'Pendeing...' }
@@ -99,6 +99,7 @@ const Index = () => {
                 {list.map(item => (
                     <div key={item.docId + String(new Date())}>
                     {authId === item.authId ? (
+                        <React.Fragment>
                         <div className="auth-inner-post-list">
                             {item.photoURL ? (
                                 <Link to="/user"><img src={ item.photoURL } className="auth-user-icon" alt="User Thumbnail" /></Link>
@@ -107,15 +108,17 @@ const Index = () => {
                             )}
                             <div className="auth-inner-post-text">
                                 <div className="post-msg">{item.msg}</div>
-                                <span className="delete"  onClick={() => handleDelete(item.docId)}>&gt; Delete...</span>
-                                {item.name ? (
-                                    <div className="post-name">{item.name}</div>
-                                ) : (
-                                    <div className="post-name">Firebaseユーザー</div>
-                                )}
+                                <span className="delete"  onClick={() => handleDelete(item.docId)}>削除...</span>
                             </div>
                         </div>
+                        {item.name ? (
+                            <div className="auth-post-name">{item.name}</div>
+                        ) : (
+                            <div className="auth-post-name">Firebaseユーザー</div>
+                        )}
+                        </React.Fragment>
                     ) : (
+                        <React.Fragment>
                         <div className="inner-post-list">
                             {item.photoURL ? (
                                 <img src={ item.photoURL } className="user-icon" alt="User Thumbnail" />
@@ -124,13 +127,14 @@ const Index = () => {
                             )}
                             <div className="inner-post-text">
                                 <div className="post-msg">{item.msg}</div>
-                                {item.name ? (
-                                    <div className="post-name">{item.name}</div>
-                                ) : (
-                                    <div className="post-name">Firebaseユーザー</div>
-                                )}
                             </div>
                         </div>
+                        {item.name ? (
+                            <div className="post-name">{item.name}</div>
+                        ) : (
+                            <div className="post-name">Firebaseユーザー</div>
+                        )}
+                        </React.Fragment>
                     )}
                     </div>
                 ))}

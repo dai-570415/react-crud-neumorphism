@@ -5,7 +5,7 @@ const Header = () => {
 
     return(
         <header>
-            <h1><Link to="/">Neumoct</Link></h1>
+            <h1><Link to="/">BlurryChat</Link></h1>
         </header>
     );
 }

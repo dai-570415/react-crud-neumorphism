@@ -19,34 +19,36 @@ const Signin = ({ history }) => {
 
     return (
         <React.Fragment>
-            <h2>Sign in</h2>
-            <form onSubmit={ handleSubmit }>
-                <input
-                    name="email"
-                    type="email"
-                    placeholder="Email"
-                />
+            <div className="sign-page">
+                <h2>Sign in</h2>
+                <form onSubmit={ handleSubmit }>
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                    />
 
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                />
-                <button type="submit">Sign in</button>
-            </form>
-            <div className="link">
-                <Link to="/signup_hook">アカウントお持ちでない方はこちら</Link>
-            </div>
-            <div className="another-line">or</div>
-            <div className="sns-button">
-                <div className="google-icon" onClick={ GoogleAuth }><img src={ GoogleIcon } alt="Google認証" />
-                    Googleアカウントで認証
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                    />
+                    <button type="submit">Sign in</button>
+                </form>
+                <div className="link">
+                    <Link to="/signup_hook">アカウントお持ちでない方はこちら</Link>
                 </div>
-                <div className="twitter-icon" onClick={ TwitterAuth }><img src={ TwiiterIcon } alt="Twitter認証" />
-                    Twitterアカウントで認証
+                <div className="another-line">or</div>
+                <div className="sns-button">
+                    <div className="google-icon" onClick={ GoogleAuth }><img src={ GoogleIcon } alt="Google認証" />
+                        Googleアカウントで認証
+                    </div>
+                    <div className="twitter-icon" onClick={ TwitterAuth }><img src={ TwiiterIcon } alt="Twitter認証" />
+                        Twitterアカウントで認証
+                    </div>
                 </div>
+                {/* <div onClick={ FacebookAuth }>Facebook認証(検証中)</div> */}
             </div>
-            {/* <div onClick={ FacebookAuth }>Facebook認証(検証中)</div> */}
         </React.Fragment>
     );
 }

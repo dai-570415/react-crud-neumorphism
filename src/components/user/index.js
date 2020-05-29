@@ -6,6 +6,7 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import BackTopIcon from '../../assets/img/backtop.png';
 import UserIcon from '../../assets/img/user.png';
 import styled from 'styled-components';
+import Nav from '../../components/elements/Nav';
 
 const BackTopStyle = styled.img`
   width: 50px;
@@ -51,46 +52,49 @@ const Index = () => {
     }
         
     return(
-        <React.Fragment>
-            <SignOut />
-            <Link to="/"><BackTopStyle src={ BackTopIcon } alt="Topに戻る"/></Link>
+        <section className="content">
+            <Nav />
+            <div className="post-page">
+                <SignOut />
+                <Link to="/"><BackTopStyle src={ BackTopIcon } alt="Topに戻る"/></Link>
 
-            <div className="user-wrapper">
-                <div className="user">
-                    {photoURL ? (
-                        <img src={ photoURL } className="auth-user-icon" alt="User Thumbnail" />
-                    ) : (
-                        <img src={ UserIcon } className="auth-user-icon" alt="Firebase Thumbnail" />
-                    )}
-                    <div className="user-datail">
-                        {name ? (
-                            <div className="user-name">{name}</div>
+                <div className="user-wrapper">
+                    <div className="user">
+                        {photoURL ? (
+                            <img src={ photoURL } className="auth-user-icon" alt="User Thumbnail" />
                         ) : (
-                            <div className="user-name">Firebaseユーザー</div>
+                            <img src={ UserIcon } className="auth-user-icon" alt="Firebase Thumbnail" />
                         )}
+                        <div className="user-datail">
+                            {name ? (
+                                <div className="user-name-center">{name}</div>
+                            ) : (
+                                <div className="user-name-center">Firebaseユーザー</div>
+                            )}
+                        </div>
                     </div>
-                </div>
 
-                <div className="post-list user-post-list">
-                {length !== 0 ? (
-                    <React.Fragment>
-                        {result.map(item => (
-                            <div key={item.docId + String(new Date())}>
-                                <div className="auth-inner-post-list">
-                                    <div className="auth-inner-post-text">
-                                        <div className="post-msg">{item.msg}</div>
-                                        <span className="delete"  onClick={() => handleDelete(item.docId)}>&gt; Delete...</span>
+                    <div className="post-list user-post-list">
+                    {length !== 0 ? (
+                        <React.Fragment>
+                            {result.map(item => (
+                                <div key={item.docId + String(new Date())}>
+                                    <div className="auth-inner-post-list">
+                                        <div className="auth-inner-post-text">
+                                            <div className="post-msg">{item.msg}</div>
+                                            <span className="delete"  onClick={() => handleDelete(item.docId)}>削除...</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </React.Fragment>
-                ) : (
-                    <div className="no-user-posts">まだ記事が投稿されていません</div>
-                )}
+                            ))}
+                        </React.Fragment>
+                    ) : (
+                        <div className="no-user-posts">まだ記事が投稿されていません</div>
+                    )}
+                    </div>
                 </div>
             </div>
-        </React.Fragment>
+        </section>
     );
 }
 
